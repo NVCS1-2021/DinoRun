@@ -19,7 +19,13 @@ public void draw() {
   player.show();
   player.update();
   //1.c. show and update coins
-  
+  drawScore();
+}
+
+private void drawScore() {
+  player.updateScore(cactuses);
+  textSize(48);
+  text(player.score, 20, 50);
 }
 
 //1.b. spawn coins higher in the air
