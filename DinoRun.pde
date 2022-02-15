@@ -1,9 +1,12 @@
 //create empty array
 Cactus[] cactuses = new Cactus[20];
+Dino player;
+//1.a. create empty array coins
 
 public void setup() {
   size(800,400);
   spawnCacti();
+  player = new Dino();
 }
 
 public void draw() {
@@ -11,11 +14,28 @@ public void draw() {
   for (int i = 0; i < cactuses.length; i++) {
     cactuses[i].show();
     cactuses[i].update();
+    player.dinoVsCactus(cactuses[i]);
   }
+  player.show();
+  player.update();
+  //1.c. show and update coins
+  
 }
+
+//1.b. spawn coins higher in the air
 
 private void spawnCacti() {
   for (int i = 0; i < cactuses.length; i++) {
     cactuses[i] = new Cactus(100 * i + 200,300);
+  }
+}
+
+private void respawnCactus() {
+  
+}
+
+public void keyPressed() {
+  if (keyCode == 32) {
+    player.jump();
   }
 }

@@ -1,9 +1,9 @@
-public class Cactus {
+public class Coin {
   private PVector pos, vel, size;
   private int speed;
   
   //constructor
-  public Cactus(int x, int y) {
+  public Coin(int x, int y) {
     pos = new PVector(x,y);
     speed = 3;
     vel = new PVector(-speed,0);
